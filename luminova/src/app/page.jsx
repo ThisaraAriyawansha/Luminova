@@ -1,27 +1,59 @@
 // pages/index.js
 import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div
+      className="flex flex-col items-center justify-center min-h-screen bg-gray-100"
+      style={{
+        backgroundImage: "url('/Assets/images/764385-widescreen-black-purple-background-2560x1600-mac.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <Head>
         <title>Luminova - Event Planning Simplified</title>
         <meta name="description" content="Organize, manage, and publish events seamlessly with Luminova." />
         <link rel="icon" href="/Assets/images/letter-l-logo-icon-design-with-swoosh-and-creative-curved-cut-shape-vector-removebg-preview.png" />
       </Head>
 
-      <header className="w-full bg-white shadow">
-        <div className="container flex items-center justify-between px-4 py-6 mx-auto">
-          <h1 className="text-3xl font-bold text-indigo-600">Luminova</h1>
-          <nav>
-            <a href="#features" className="mx-4 text-gray-600 hover:text-indigo-600">Features</a>
-            <a href="#about" className="mx-4 text-gray-600 hover:text-indigo-600">About</a>
-            <a href="#contact" className="mx-4 text-gray-600 hover:text-indigo-600">Contact</a>
-          </nav>
-        </div>
-      </header>
+      <header className="w-full shadow bg-white/0">
+  <div className="container flex items-center justify-between px-4 py-6 mx-auto">
+    {/* Logo and title together */}
+    <div className="flex items-center">
+      <Image
+        src="/Assets/images/logo-design-of-l-ll-in-vector-logo-for-construction-home-real-estate-building-property-minimal-awesome-trendy-professional-logo-design-template-on-black-background-700-209636770-removebg-preview.png"
+        alt="Luminova Logo"
+        width={50}
+        height={50}
+        className="mr-2"
+      />
+      <h1 className="text-3xl font-bold text-white">Luminova</h1>
+    </div>
+    <nav className="flex space-x-4">
+  <a 
+    href="#features" 
+    className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+    Features
+  </a>
+  <a 
+    href="#about" 
+    className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+    About
+  </a>
+  <a 
+    href="#contact" 
+    className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+    Contact
+  </a>
+</nav>
 
-      <main className="flex flex-col items-center flex-1 p-4 mt-10 text-center">
+  </div>
+</header>
+
+
+      <main className="flex flex-col items-center flex-1 p-4 mt-10 text-center bg-white rounded-lg shadow bg-opacity-90">
         <h2 className="mb-4 text-4xl font-extrabold text-gray-800">Make Your Events Shine with Luminova</h2>
         <p className="mb-8 text-lg text-gray-600">
           Organize, manage, and publish events – from private parties to professional gatherings – all in one place.
@@ -31,27 +63,9 @@ export default function Home() {
         </a>
       </main>
 
-      <section id="features" className="w-full py-16 bg-white">
-        <div className="container px-4 mx-auto text-center">
-          <h3 className="mb-8 text-3xl font-semibold text-gray-800">Features</h3>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="p-4 rounded-lg shadow bg-gray-50">
-              <h4 className="text-xl font-semibold text-indigo-600">Event Organization</h4>
-              <p className="mt-2 text-gray-600">Plan and structure events effortlessly with tools that keep everything in place.</p>
-            </div>
-            <div className="p-4 rounded-lg shadow bg-gray-50">
-              <h4 className="text-xl font-semibold text-indigo-600">Invite and Manage RSVPs</h4>
-              <p className="mt-2 text-gray-600">Send invites and manage RSVPs directly from Luminova’s platform.</p>
-            </div>
-            <div className="p-4 rounded-lg shadow bg-gray-50">
-              <h4 className="text-xl font-semibold text-indigo-600">Event Publishing</h4>
-              <p className="mt-2 text-gray-600">Make events public or private, and share with your audience with ease.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <footer className="w-full py-6 text-white bg-gray-800">
+
+      <footer className="w-full py-6 text-white bg-gray-800 bg-opacity-90">
         <div className="container px-4 mx-auto text-center">
           <p className="text-sm">&copy; {new Date().getFullYear()} Luminova. All rights reserved.</p>
         </div>
