@@ -29,7 +29,9 @@ export default function Home() {
         height={50}
         className="mr-2"
       />
-      <h1 className="text-3xl font-bold text-white">Luminova</h1>
+<h1 className="text-3xl font-extrabold tracking-wide text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text">
+  Luminova
+</h1>
     </div>
     <nav className="flex space-x-4">
   <a 
