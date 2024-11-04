@@ -64,14 +64,30 @@ export default function Home() {
       </header>
 
       <main className="flex flex-col items-center flex-1 p-4 mt-10 text-center">
-        <div className="p-8 mb-10 bg-white rounded-lg shadow-lg bg-opacity-90">
-          <h2 className="mb-4 text-4xl font-extrabold text-gray-800">Make Your Events Shine with Luminova</h2>
-          <p className="mb-8 text-lg text-gray-600">
-            Organize, manage, and publish events – from private parties to professional gatherings – all in one place.
-          </p>
-          <a href="#get-started" className="px-8 py-4 font-semibold text-white transition bg-indigo-600 rounded-full hover:bg-indigo-500">
-            Get Started
-          </a>
+        
+      <div className="flex flex-col w-full max-w-6xl p-8 mb-10 bg-white rounded-lg shadow-lg md:flex-row bg-opacity-90">
+          {/* Left side - Text content */}
+          <div className="flex-1 pr-4">
+            <h2 className="mb-4 text-4xl font-extrabold text-gray-800">Make Your Events Shine with Luminova</h2>
+            <p className="mb-8 text-lg text-gray-600">
+              Organize, manage, and publish events – from private parties to professional gatherings – all in one place.
+            </p>
+            <a href="#get-started" className="px-8 py-4 font-semibold text-white transition bg-indigo-600 rounded-full hover:bg-indigo-500">
+              Get Started
+            </a>
+          </div>
+
+          {/* Right side - Image */}
+          <div className="flex-1">
+            <Image 
+              src="/Assets/images/istockphoto-1196272039-612x612-removebg-preview.png" // Replace with your image path
+              alt="Event Planning"
+              layout="responsive" // Responsive layout
+              width={500} // Adjust width as needed
+              height={300} // Adjust height as needed
+              className="rounded-lg" // Optional: rounded corners for the image
+            />
+          </div>
         </div>
 
         {/* Additional content sections with separate containers */}
