@@ -10,6 +10,7 @@ export default function Home() {
         backgroundImage: "url('/Assets/images/764385-widescreen-black-purple-background-2560x1600-mac.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        
       }}
     >
       <Head>
@@ -29,27 +30,39 @@ export default function Home() {
         height={50}
         className="mr-2"
       />
+      
 <h1 className="text-3xl font-extrabold tracking-wide text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text">
   Luminova
 </h1>
     </div>
-    <nav className="flex space-x-4">
-  <a 
-    href="#features" 
-    className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-    Features
-  </a>
+    <nav className="flex space-x-8">
   <a 
     href="#about" 
     className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
     About
   </a>
   <a 
-    href="#contact" 
+    href="#event" 
     className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-    Contact
+    Event
+  </a>
+  <a 
+    href="#gallery" 
+    className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+    Gallery
+  </a>
+  <a 
+    href="#reservation" 
+    className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+    Reservation
+  </a>
+  <a 
+    href="#news" 
+    className="relative text-white font-semibold hover:text-white text-lg font-serif after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+    News
   </a>
 </nav>
+
 
   </div>
 </header>
