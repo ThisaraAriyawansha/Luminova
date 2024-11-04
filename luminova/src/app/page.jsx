@@ -23,7 +23,7 @@ export default function Home() {
     {/* Logo and title together */}
     <div className="flex items-center">
       <Image
-        src="/Assets/images/logo-design-of-l-ll-in-vector-logo-for-construction-home-real-estate-building-property-minimal-awesome-trendy-professional-logo-design-template-on-black-background-700-209636770-removebg-preview.png"
+        src="/Assets/images/logo.png"
         alt="Luminova Logo"
         width={50}
         height={50}
