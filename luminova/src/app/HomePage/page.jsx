@@ -53,7 +53,7 @@ export default function HomePage() {
               Luminova
             </h1>
           </div>
-          <nav className="flex space-x-8 ">
+          <nav className="flex mr-8 space-x-8">
             {['about', 'event', 'gallery', 'reservation', 'news'].map((item) => (
               <a
                 key={item}
