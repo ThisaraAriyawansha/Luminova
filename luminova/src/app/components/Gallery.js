@@ -6,6 +6,7 @@ export default function Gallery() {
 
   return (
     <motion.div
+      id="gallery"
       initial="hidden"
       animate="visible"
       variants={fadeIn}
