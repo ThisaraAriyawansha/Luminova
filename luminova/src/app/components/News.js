@@ -6,6 +6,7 @@ export default function News() {
 
   return (
     <motion.div
+      id="news"
       initial="hidden"
       animate="visible"
       variants={fadeIn}

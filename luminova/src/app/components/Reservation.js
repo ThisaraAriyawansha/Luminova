@@ -6,6 +6,7 @@ export default function Reservation() {
 
   return (
     <motion.div
+      id="reservation"
       initial="hidden"
       animate="visible"
       variants={fadeIn}

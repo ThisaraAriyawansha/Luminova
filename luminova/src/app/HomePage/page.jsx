@@ -8,11 +8,19 @@ import Events from '../components/Events';
 import Gallery from '../components/Gallery';
 import Reservation from '../components/Reservation';
 import News from '../components/News';
+import About from '../components/About';
 
 export default function HomePage() {
   // Define animation variants
   const fadeIn = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
   const slideIn = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div
@@ -46,13 +54,13 @@ export default function HomePage() {
             </h1>
           </div>
           <nav className="flex space-x-8 ">
-            {['About', 'Event', 'Gallery', 'Reservation', 'News'].map((item) => (
+            {['about', 'event', 'gallery', 'reservation', 'news'].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative text-white font-semibold text-lg font-serif hover:text-white after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                onClick={() => scrollToSection(item)}
+                className="relative text-white font-semibold text-lg font-serif hover:text-white after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
               >
-                {item}
+                {item.charAt(0).toUpperCase() + item.slice(1)}
               </a>
             ))}
           </nav>
@@ -74,7 +82,9 @@ export default function HomePage() {
             <p className="mb-10 text-lg text-gray-200" style={{ fontFamily: 'Tinos, serif' }}>
               Seamlessly organize and manage events, from intimate gatherings to large professional conferences. Customize your planning experience with real-time collaboration and an intuitive interface.
             </p>
-            <a href="#get-started" className="px-8 py-3 font-semibold text-white bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-500">Get in Touch</a>
+            <a href="#get-started" className="px-8 py-3 font-semibold text-white transition duration-200 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-500 hover:to-purple-300">
+              Get in Touch
+            </a>
           </div>
 
           <div className="flex-1 mt-6 md:w-1/2 md:mt-0">
@@ -89,6 +99,33 @@ export default function HomePage() {
           </div>
         </motion.div>
 
+
+        <div className="max-w-5xl p-6 mx-auto mt-10 mb-10 rounded-lg -lg bg-white/0">
+  <h1 className="mb-6 text-4xl font-extrabold text-center text-transparent uppercase bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text">
+    Luminova
+  </h1>
+  <p className="text-lg leading-relaxed text-white">
+  Welcome to Luminova, your go-to platform for organizing and publishing unforgettable events. Whether you’re hosting an intimate gathering, a lavish wedding, or a large-scale professional conference, Luminova is designed to meet all your planning needs.
+  <br /><br />
+  Our platform empowers you to customize every detail of your events with real-time collaboration tools, allowing you and your team to work together effortlessly from any location. Experience a user-friendly interface that streamlines the planning process, making it easy to manage guest lists, track RSVPs, and coordinate schedules.
+  <br /><br />
+  From choosing the perfect venue to curating a delightful catering menu, Luminova provides all the resources necessary to create memorable experiences. With integrated features for event promotion and feedback collection, you can ensure that every aspect is perfectly tailored, guaranteeing that your attendees have an exceptional time.
+</p>
+
+  
+  {/* Button */}
+  <div className="flex justify-center mt-8">
+    <a 
+      href="#get-started" // Replace with your actual link
+      className="px-8 py-3 font-semibold text-white transition-colors duration-300 border border-white rounded-lg hover:bg-purple-600 hover:text-white"
+    >
+      Get in Touch
+    </a>
+  </div>
+</div>
+
+
+        <About/>
         <Features />
         <Events />
         <Gallery />

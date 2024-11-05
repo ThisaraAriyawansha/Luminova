@@ -6,6 +6,7 @@ export default function Events() {
 
   return (
     <motion.div
+      id="event"
       initial="hidden"
       animate="visible"
       variants={fadeIn}
