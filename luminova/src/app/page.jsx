@@ -65,30 +65,44 @@ export default function Home() {
 
       <main className="flex flex-col items-center flex-1 p-4 mt-10 text-center">
         
-      <div className="flex flex-col w-full max-w-6xl p-8 mb-10 bg-white rounded-lg shadow-lg md:flex-row bg-opacity-90">
-          {/* Left side - Text content */}
-          <div className="flex-1 pr-4">
-            <h2 className="mb-4 text-4xl font-extrabold text-gray-800">Make Your Events Shine with Luminova</h2>
-            <p className="mb-8 text-lg text-gray-600">
-              Organize, manage, and publish events – from private parties to professional gatherings – all in one place.
-            </p>
-            <a href="#get-started" className="px-8 py-4 font-semibold text-white transition bg-indigo-600 rounded-full hover:bg-indigo-500">
-              Get Started
-            </a>
-          </div>
+      <div className="flex flex-col w-full max-w-6xl p-1 mb-12 md:flex-row md:space-x-8">
+  {/* Left side - Text content */}
+  <div className="flex-1 p-6 mr-40 -ml-20 text-left text-white md:w-1/2">
+        <h6 className="mb-2 text-base font-semibold tracking-wider text-white uppercase">
+        Welcome to the Party
+      </h6>
 
-          {/* Right side - Image */}
-          <div className="flex-1">
-            <Image 
-              src="/Assets/images/istockphoto-1196272039-612x612-removebg-preview.png" // Replace with your image path
-              alt="Event Planning"
-              layout="responsive" // Responsive layout
-              width={500} // Adjust width as needed
-              height={300} // Adjust height as needed
-              className="rounded-lg" // Optional: rounded corners for the image
-            />
-          </div>
-        </div>
+    <h2 className="mb-8 font-extrabold text-white text-7xl">
+      Make Your Events Shine with Luminova
+    </h2>
+    <p className="mb-10 text-lg text-gray-200 font-poppins">
+  Seamlessly organize and manage events, from intimate gatherings to large professional conferences. With Luminova, customize your planning experience, ensuring every detail meets your needs. Enjoy features like real-time collaboration and an intuitive interface that transforms your ideas into unforgettable experiences.
+</p>
+
+
+    <a 
+      href="#get-started" 
+      className="px-8 py-3 font-semibold text-white transition duration-300 ease-in-out transform bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-500 hover:scale-105"
+    >
+      Get Started
+    </a>
+  </div>
+
+  {/* Right side - Image */}
+  <div className="flex-1 mt-6 md:w-1/2 md:mt-0">
+    <Image 
+      src="/Assets/images/1730777171598.png_image.png" // Replace with your image path
+      alt="Event Planning"
+      layout="responsive"
+      width={450}
+      height={280}
+      className="shadow-lg rounded-xl"
+    />
+  </div>
+</div>
+
+
+
 
         {/* Additional content sections with separate containers */}
         <div id="features" className="p-8 mb-10 bg-white rounded-lg shadow-lg bg-opacity-90">
