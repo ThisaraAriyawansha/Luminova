@@ -1,6 +1,8 @@
 // pages/index.js
 import Head from 'next/head';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
 
 export default function Home() {
   return (
@@ -13,13 +15,15 @@ export default function Home() {
       }}
     >
       <Head>
+
         <title>Luminova - Event Planning Simplified</title>
         <meta name="description" content="Organize, manage, and publish events seamlessly with Luminova." />
         <link rel="icon" href="/Assets/images/letter-l-logo-icon-design-with-swoosh-and-creative-curved-cut-shape-vector-removebg-preview.png" />
       </Head>
 
       <header className="w-full shadow bg-white/0">
-        <div className="container flex items-center justify-between px-4 py-6 mx-auto">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <div className="container flex items-center justify-between px-4 py-6 mx-auto">
           {/* Logo and title together */}
           <div className="flex items-center">
             <Image
@@ -73,18 +77,20 @@ export default function Home() {
       </h6>
 
     <h2 className="mb-8 font-extrabold text-white text-7xl">
-      Make Your Events Shine with Luminova
+      Make Your Events Shine with<br/> Luminova
     </h2>
-    <p className="mb-10 text-lg text-gray-200 font-poppins">
+    <p className="mb-10 text-lg text-gray-200" style={{ fontFamily: 'Tinos, serif' }}>
   Seamlessly organize and manage events, from intimate gatherings to large professional conferences. With Luminova, customize your planning experience, ensuring every detail meets your needs. Enjoy features like real-time collaboration and an intuitive interface that transforms your ideas into unforgettable experiences.
 </p>
+
+
 
 
     <a 
       href="#get-started" 
       className="px-8 py-3 font-semibold text-white transition duration-300 ease-in-out transform bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-500 hover:scale-105"
     >
-      Get Started
+      Get in Touch
     </a>
   </div>
 
