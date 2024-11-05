@@ -10,6 +10,32 @@ import Reservation from '../components/Reservation';
 import News from '../components/News';
 import About from '../components/About';
 
+
+const hosts = [
+  {
+    name: 'Etta Green',
+    role: 'TOP 100 DJ\'s',
+    image: '/images/etta.jpg', // Replace with actual image path
+  },
+  {
+    name: 'Brooklyn Simmons',
+    role: 'New York DJ',
+    image: '/images/brooklyn.jpg', // Replace with actual image path
+  },
+  {
+    name: 'Jenny Wilson',
+    role: 'Dancer',
+    image: '/images/jenny.jpg', // Replace with actual image path
+  },
+  {
+    name: 'Ronald Richards',
+    role: 'Owner',
+    image: '/images/ronald.jpg', // Replace with actual image path
+  },
+];
+
+
+
 export default function HomePage() {
   // Define animation variants
   const fadeIn = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
@@ -126,6 +152,31 @@ export default function HomePage() {
 
 
         <About/>
+
+
+        <div className="px-8 py-16 text-white bg-black md:px-16 lg:px-32">
+      <h2 className="mb-8 text-3xl font-bold text-center">Our Party Host</h2>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {hosts.map((host, index) => (
+          <div key={index} className="flex flex-col items-center text-center">
+            <div className="relative mb-4 w-60 h-80">
+              <Image
+                src={host.image}
+                alt={host.name}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <h3 className="text-xl font-semibold">{host.name}</h3>
+            <p className="text-purple-500">{host.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    
+        
         <Features />
         <Events />
         <Gallery />
