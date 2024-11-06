@@ -173,7 +173,7 @@ export default function HomePage() {
 
 
 
-        <div className="px-8 py-16 mb-20 text-white bg-transparent md:px-16 lg:px-32">
+        <div className="px-8 py-16 mb-0 text-white bg-transparent md:px-16 lg:px-32">
   <h2 className="mb-20 text-4xl font-bold text-left">Our Party Host</h2>
   <div className="grid grid-cols-1 gap-24 md:grid-cols-2 lg:grid-cols-4">
     {hosts.map((host, index) => (
@@ -206,8 +206,9 @@ export default function HomePage() {
 
     
         
-        <Features />
         <Events />
+        <Features />
+
         <Gallery />
         <Reservation />
         <News />
