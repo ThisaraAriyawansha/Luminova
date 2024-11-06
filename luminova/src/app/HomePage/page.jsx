@@ -246,25 +246,40 @@ export default function HomePage() {
 <Events />
 
 
+
+
 <div className="px-4 py-16 text-white bg-transparent">
-      <div className="max-w-6xl mx-auto text-left mb-28">
-        <h2 className="mb-12 text-4xl font-bold">What We Do</h2>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="flex flex-col items-center text-left"
-            >
-              <div className="flex items-center justify-center w-12 h-12 mb-4 text-lg font-bold text-black bg-white rounded-full">
-                {service.id}
-              </div>
-              <h3 className="mb-2 text-xl font-semibold">{service.title}</h3>
-              <p className="text-sm text-gray-400">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+  <div className="max-w-6xl mx-auto text-left mb-28">
+    <h2 className="mb-12 text-5xl font-bold">What We Do</h2>
+    <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+      {services.map((service) => (
+        <motion.div
+          key={service.id}
+          className="flex flex-col items-start text-left"
+          initial={{ opacity: 0, x: -100, scale: 0.9 }} // Start off-screen to the left, smaller and hidden
+          whileInView={{
+            opacity: 1,          // Fade in
+            x: 0,                // Slide to normal position (0px from left)
+            scale: 1,            // Scale up to normal size
+            transition: { 
+              duration: 2.5,     // Further slower animation duration (2.5 seconds)
+              ease: "easeOut",   // Easing function for smooth exit
+            },
+          }}
+          viewport={{ once: true, amount: 0.3 }} // Trigger the animation when 30% of the element is in view
+        >
+          <div className="flex items-center justify-center w-16 h-16 mb-6 text-xl font-bold text-purple-600 bg-white rounded-full">
+            {service.id}
+          </div>
+          <h3 className="mb-3 text-2xl font-semibold">{service.title}</h3>
+          <p className="text-base text-gray-400">{service.description}</p>
+        </motion.div>
+      ))}
     </div>
+  </div>
+</div>
+
+
 
 
 
