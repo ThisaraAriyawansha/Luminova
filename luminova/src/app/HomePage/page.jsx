@@ -13,24 +13,24 @@ import About from '../components/About';
 
 const hosts = [
   {
-    name: 'Etta Green',
-    role: 'TOP 100 DJ\'s',
-    image: '/images/etta.jpg', // Replace with actual image path
+    name: 'Osanda Gunawardana',
+    role: 'Levi Frizz',
+    image: '/Assets/images/Levi Frizz (Osanda S Gunawardana).webp', // Replace with actual image path
   },
   {
-    name: 'Brooklyn Simmons',
-    role: 'New York DJ',
-    image: '/images/brooklyn.jpg', // Replace with actual image path
+    name: 'Thivina',
+    role: 'Mechanic',
+    image: '/Assets/images/Mechanic( Thivina).webp', // Replace with actual image path
   },
   {
     name: 'Jenny Wilson',
     role: 'Dancer',
-    image: '/images/jenny.jpg', // Replace with actual image path
+    image: '/Assets/images/dark-neon-iphone-woman-wearing-sunglasses-z90chg9um9ehyl19.jpg', // Replace with actual image path
   },
   {
-    name: 'Ronald Richards',
-    role: 'Owner',
-    image: '/images/ronald.jpg', // Replace with actual image path
+    name: 'Radith Rukshan',
+    role: 'Noiyse project',
+    image: '/Assets/images/Noiyse project (Radith Rukshan).jpeg', // Replace with actual image path
   },
 ];
 
@@ -126,54 +126,83 @@ export default function HomePage() {
         </motion.div>
 
 
-        <div className="max-w-5xl p-6 mx-auto mt-10 mb-10 rounded-lg -lg bg-white/0">
-  <h1 className="mb-6 text-4xl font-extrabold text-center text-transparent uppercase bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text">
+        <div className="max-w-5xl p-6 mx-auto mt-10 mb-10 rounded-lg lg:bg-white/0">
+  <motion.h1
+    className="mb-6 text-4xl font-extrabold text-center text-transparent uppercase bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2 }}
+    viewport={{ once: true }}
+  >
     Luminova
-  </h1>
-  <p className="text-lg leading-relaxed text-white">
-  Welcome to Luminova, your go-to platform for organizing and publishing unforgettable events. Whether you’re hosting an intimate gathering, a lavish wedding, or a large-scale professional conference, Luminova is designed to meet all your planning needs.
-  <br /><br />
-  Our platform empowers you to customize every detail of your events with real-time collaboration tools, allowing you and your team to work together effortlessly from any location. Experience a user-friendly interface that streamlines the planning process, making it easy to manage guest lists, track RSVPs, and coordinate schedules.
-  <br /><br />
-  From choosing the perfect venue to curating a delightful catering menu, Luminova provides all the resources necessary to create memorable experiences. With integrated features for event promotion and feedback collection, you can ensure that every aspect is perfectly tailored, guaranteeing that your attendees have an exceptional time.
-</p>
+  </motion.h1>
 
-  
+  <motion.p
+    className="text-lg leading-relaxed text-white"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.5, delay: 0.3 }}
+    viewport={{ once: true }}
+  >
+    Welcome to Luminova, your go-to platform for organizing and publishing unforgettable events. Whether you’re hosting an intimate gathering, a lavish wedding, or a large-scale professional conference, Luminova is designed to meet all your planning needs.
+    <br /><br />
+    Our platform empowers you to customize every detail of your events with real-time collaboration tools, allowing you and your team to work together effortlessly from any location. Experience a user-friendly interface that streamlines the planning process, making it easy to manage guest lists, track RSVPs, and coordinate schedules.
+    <br /><br />
+    From choosing the perfect venue to curating a delightful catering menu, Luminova provides all the resources necessary to create memorable experiences. With integrated features for event promotion and feedback collection, you can ensure that every aspect is perfectly tailored, guaranteeing that your attendees have an exceptional time.
+  </motion.p>
+
   {/* Button */}
-  <div className="flex justify-center mt-8">
+  <motion.div
+    className="flex justify-center mt-8"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.5, delay: 0.5 }}
+    viewport={{ once: true }}
+  >
     <a 
       href="#get-started" // Replace with your actual link
       className="px-8 py-3 font-semibold text-white transition-colors duration-300 border border-white rounded-lg hover:bg-purple-600 hover:text-white"
     >
       Get in Touch
     </a>
-  </div>
+  </motion.div>
 </div>
-
 
         <About/>
 
 
-        <div className="px-8 py-16 text-white bg-black md:px-16 lg:px-32">
-      <h2 className="mb-8 text-3xl font-bold text-center">Our Party Host</h2>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-        {hosts.map((host, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
-            <div className="relative mb-4 w-60 h-80">
-              <Image
-                src={host.image}
-                alt={host.name}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <h3 className="text-xl font-semibold">{host.name}</h3>
-            <p className="text-purple-500">{host.role}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+
+
+        <div className="px-8 py-16 mb-20 text-white bg-transparent md:px-16 lg:px-32">
+  <h2 className="mb-20 text-4xl font-bold text-left">Our Party Host</h2>
+  <div className="grid grid-cols-1 gap-24 md:grid-cols-2 lg:grid-cols-4">
+    {hosts.map((host, index) => (
+      <motion.div
+        key={index}
+        className="flex flex-col items-start text-left"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.8, delay: index * 0.2 }} // Slow down animation
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.05 }} // Hover effect
+      >
+        <div className="relative mb-4 transition-transform duration-300 w-60 h-80 hover:shadow-xl hover:scale-105">
+          <Image
+            src={host.image}
+            alt={host.name}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg shadow-lg"
+          />
+        </div>
+        <h3 className="text-2xl font-semibold">{host.name}</h3>
+        <p className="text-lg text-purple-500">{host.role}</p>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
+
 
     
         
