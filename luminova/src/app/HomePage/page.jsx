@@ -35,6 +35,47 @@ const hosts = [
 ];
 
 
+const services = [
+  {
+    id: 1,
+    title: 'Corporate Events',
+    description:
+      'Creativity corporate events from concept and design, right through to production and management of the event itself.',
+  },
+  {
+    id: 2,
+    title: 'Branded Events',
+    description:
+      'We offer the best landscaping and gardening guarantee. Our branded events provide unmatched opportunities for you to interact with customers and make the brand even stronger and recognizable.',
+  },
+  {
+    id: 3,
+    title: 'Commercial Shots',
+    description:
+      'We provide production services for commercials, branded media, films/TV or documentary shoots in many pavilions.',
+  },
+  {
+    id: 4,
+    title: 'Weddings & Engagements',
+    description:
+      'Specializing in creating unforgettable moments for weddings and engagement parties, from intimate gatherings to grand celebrations.',
+  },
+  {
+    id: 5,
+    title: 'Birthday Parties',
+    description:
+      'Our birthday party services include live DJs, dancing, bottle service, and much more.',
+  },
+  {
+    id: 6,
+    title: 'VIP Service',
+    description:
+      'From individual club VIP packages and bottle services to closed exclusive parties.',
+  },
+];
+
+
+
 
 export default function HomePage() {
   // Define animation variants
@@ -202,11 +243,31 @@ export default function HomePage() {
   </div>
 </div>
 
+<Events />
 
 
-    
-        
-        <Events />
+<div className="px-4 py-16 text-white bg-transparent">
+      <div className="max-w-6xl mx-auto text-left mb-28">
+        <h2 className="mb-12 text-4xl font-bold">What We Do</h2>
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="flex flex-col items-center text-left"
+            >
+              <div className="flex items-center justify-center w-12 h-12 mb-4 text-lg font-bold text-black bg-white rounded-full">
+                {service.id}
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">{service.title}</h3>
+              <p className="text-sm text-gray-400">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+
+
         <Features />
 
         <Gallery />
