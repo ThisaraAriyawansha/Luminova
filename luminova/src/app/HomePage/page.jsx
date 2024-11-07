@@ -198,7 +198,7 @@ export default function HomePage() {
         Seamlessly organize and manage events, from intimate gatherings to large professional conferences. Customize your planning experience with real-time collaboration and an intuitive interface.
       </p>
       <a
-        href="#get-started"
+        href="#news"
         className="px-6 py-3 font-semibold text-white transition duration-200 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-500 hover:to-purple-300"
       >
         Get in Touch
@@ -256,7 +256,7 @@ export default function HomePage() {
     viewport={{ once: true }}
   >
     <a 
-      href="#get-started" // Replace with your actual link
+      href="#news" // Replace with your actual link
       className="px-8 py-3 font-semibold text-white transition-colors duration-300 border border-white rounded-lg hover:bg-purple-600 hover:text-white"
     >
       Get in Touch
