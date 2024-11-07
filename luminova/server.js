@@ -3,12 +3,14 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const admin = require("firebase-admin");
+require("dotenv").config(); // Load environment variables from .env file
 
 // Initialize Firebase Admin SDK with the service account key
 const serviceAccount = require("./firebase-adminsdk.json");
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://your-database-name.firebaseio.com",
+  databaseURL: process.env.FIREBASE_DATABASE_URL, // Use the environment variable for DB URL
 });
 
 const db = admin.firestore();
