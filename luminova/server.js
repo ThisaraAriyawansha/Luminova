@@ -6,7 +6,7 @@ const admin = require("firebase-admin");
 require("dotenv").config(); // Load environment variables from .env file
 
 // Initialize Firebase Admin SDK with the service account key
-const serviceAccount = require("./firebase-adminsdk.json");
+const serviceAccount = require("./luminova-fb0b4-firebase-adminsdk-phal3-d6d2b8b2c1.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
