@@ -8,6 +8,16 @@ export default function Reservation() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const scaleIn = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { scale: 1, opacity: 1 },
+  };
+
+  const slideIn = {
+    hidden: { x: -50, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   const formRef = useRef(null);
   const contactRef = useRef(null);
   const formInView = useInView(formRef, { once: true, margin: "-50px" });
@@ -56,21 +66,26 @@ export default function Reservation() {
   };
 
   return (
-    <div className="flex items-center min-h-screen p-8 text-white bg-black" id="reservation">
+    <div className="flex items-center min-h-screen p-8 text-white bg-transparent" id="reservation">
       <div className="grid w-full max-w-5xl grid-cols-1 gap-36 md:grid-cols-2">
         
-        {/* Reservation Form Section */}
         <motion.div
           ref={formRef}
           initial="hidden"
           animate={formInView ? "visible" : "hidden"}
           variants={fadeIn}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          transition={{ duration: 3, ease: "easeInOut" }} 
           className="space-y-8 text-left"
         >
           <h2 className="mb-4 text-3xl font-bold">Want To Reserve?</h2>
           <form className="grid grid-cols-1 gap-4 md:grid-cols-2" onSubmit={handleSubmit}>
-            <div className="col-span-1">
+            <motion.div
+              variants={slideIn}
+              initial="hidden"
+              animate={formInView ? "visible" : "hidden"}
+              transition={{ duration: 0.9, delay: 0.2 }} 
+              className="col-span-1"
+            >
               <label className="block mb-2 text-sm">Your name*</label>
               <input
                 type="text"
@@ -79,8 +94,14 @@ export default function Reservation() {
                 onChange={handleInputChange}
                 className="w-full p-2 text-white bg-transparent border-b border-gray-500 focus:outline-none"
               />
-            </div>
-            <div className="col-span-1">
+            </motion.div>
+            <motion.div
+              variants={slideIn}
+              initial="hidden"
+              animate={formInView ? "visible" : "hidden"}
+              transition={{ duration: 0.9, delay: 0.3 }}  
+              className="col-span-1"
+            >
               <label className="block mb-2 text-sm">Phone number*</label>
               <input
                 type="text"
@@ -89,8 +110,14 @@ export default function Reservation() {
                 onChange={handleInputChange}
                 className="w-full p-2 text-white bg-transparent border-b border-gray-500 focus:outline-none"
               />
-            </div>
-            <div className="col-span-1">
+            </motion.div>
+            <motion.div
+              variants={slideIn}
+              initial="hidden"
+              animate={formInView ? "visible" : "hidden"}
+              transition={{ duration: 0.9, delay: 0.4 }} 
+              className="col-span-1"
+            >
               <label className="block mb-2 text-sm">Email*</label>
               <input
                 type="email"
@@ -99,8 +126,14 @@ export default function Reservation() {
                 onChange={handleInputChange}
                 className="w-full p-2 text-white bg-transparent border-b border-gray-500 focus:outline-none"
               />
-            </div>
-            <div className="col-span-1">
+            </motion.div>
+            <motion.div
+              variants={slideIn}
+              initial="hidden"
+              animate={formInView ? "visible" : "hidden"}
+              transition={{ duration: 0.9, delay: 0.5 }}  
+              className="col-span-1"
+            >
               <label className="block mb-2 text-sm">No. of people*</label>
               <input
                 type="number"
@@ -109,8 +142,14 @@ export default function Reservation() {
                 onChange={handleInputChange}
                 className="w-full p-2 text-white bg-transparent border-b border-gray-500 focus:outline-none"
               />
-            </div>
-            <div className="col-span-2">
+            </motion.div>
+            <motion.div
+              variants={scaleIn}
+              initial="hidden"
+              animate={formInView ? "visible" : "hidden"}
+              transition={{ duration: 1.2, delay: 0.6 }}  
+              className="col-span-2"
+            >
               <label className="block mb-2 text-sm">Your message</label>
               <textarea
                 name="message"
@@ -119,23 +158,28 @@ export default function Reservation() {
                 className="w-full p-2 text-white bg-transparent border-b border-gray-500 focus:outline-none"
                 rows="4"
               ></textarea>
-            </div>
-            <div className="col-span-2">
+            </motion.div>
+            <motion.div
+              variants={scaleIn}
+              initial="hidden"
+              animate={formInView ? "visible" : "hidden"}
+              transition={{ duration: 1.2, delay: 0.7 }} 
+              className="col-span-2"
+            >
               <button type="submit" className="px-4 py-2 mt-4 transition border border-white hover:bg-purple-600 hover:text-white">
                 Submit
               </button>
-            </div>
+            </motion.div>
           </form>
           <p>{status}</p>
         </motion.div>
         
-        {/* Contact Information Section */}
         <motion.div
           ref={contactRef}
           initial="hidden"
           animate={contactInView ? "visible" : "hidden"}
           variants={fadeIn}
-          transition={{ duration: 2.5, delay: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 3, delay: 0.3, ease: "easeInOut" }}  
           className="space-y-4 text-left text-gray-300"
         >
           <h3 className="text-lg font-semibold text-purple-400">QUESTIONS?</h3>
@@ -143,13 +187,31 @@ export default function Reservation() {
           <p className="leading-relaxed">
             Fill out the form to attend the most anticipated events in the city and get your tickets for the best night party today for you and your friends.
           </p>
-          <p className="text-gray-400">123 Galle Road, Colombo, 00300, Sri Lanka.</p>
-          <p>
+          <motion.p
+            variants={slideIn}
+            initial="hidden"
+            animate={contactInView ? "visible" : "hidden"}
+            transition={{ duration: 0.9, delay: 0.4 }}  
+            className="text-gray-400"
+          >
+            123 Galle Road, Colombo, 00300, Sri Lanka.
+          </motion.p>
+          <motion.p
+            variants={slideIn}
+            initial="hidden"
+            animate={contactInView ? "visible" : "hidden"}
+            transition={{ duration: 0.9, delay: 0.5 }}  
+          >
             <a href="tel:+94769417154" className="text-purple-400 hover:text-white">+94 76 941 7154</a>
-          </p>
-          <p>
+          </motion.p>
+          <motion.p
+            variants={slideIn}
+            initial="hidden"
+            animate={contactInView ? "visible" : "hidden"}
+            transition={{ duration: 0.9, delay: 0.6 }} 
+          >
             <a href="mailto:office@luminova.com" className="text-purple-400 hover:text-white">office@luminova.com</a>
-          </p>
+          </motion.p>
         </motion.div>
       </div>
     </div>
