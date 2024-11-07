@@ -1,20 +1,34 @@
-// components/Gallery.js
-import { motion } from 'framer-motion';
+// pages/index.js
+import Image from 'next/image';
 
-export default function Gallery() {
-  const fadeIn = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
+const artists = [
+  { name: 'Martin Garrix', imgSrc: '/Assets/images/DQgzXjZXcAUbw7Y.jpeg' },
+  { name: 'Monolink', imgSrc: '/Assets/images/13684426.jpeg' },
+  { name: 'KSHMR', imgSrc: '/Assets/images/artworks-000426918015-imrpxd-t500x500.jpg' },
+  { name: 'AVAION', imgSrc: '/Assets/images/wss-avaion-dont-wake-me-up-FINAL-scaled.jpg' },
+  { name: 'ZHU', imgSrc: '/Assets/images/p16v4wlv79n11.webp' },
+  { name: 'Lane 8', imgSrc: '/Assets/images/thisneverhappened.jpg' },
+];
 
+export default function Home() {
   return (
-    <motion.div
-      id="gallery"
-      initial="hidden"
-      animate="visible"
-      variants={fadeIn}
-      transition={{ duration: 0.8 }}
-      className="p-8 mb-10 bg-white rounded-lg shadow-lg bg-opacity-90"
-    >
-      <h3 className="text-2xl font-bold text-gray-800">Gallery</h3>
-      <p className="mt-4 text-gray-600">Browse through our gallery to see past events.</p>
-    </motion.div>
+    <div className="flex items-center justify-center min-h-screen mb-10 bg-transparent" id="gallery">
+      <div className="grid grid-cols-1 gap-10 p-10 md:grid-cols-3">
+        {artists.map((artist, index) => (
+          <div key={index} className="text-center">
+            <div className="relative mb-6 overflow-hidden shadow-lg w-80 h-80 rounded-xl">
+              <Image
+                src={artist.imgSrc}
+                alt={artist.name}
+                layout="fill"
+                objectFit="cover"
+                className="transition-transform duration-300 hover:scale-110"
+              />
+            </div>
+            <p className="text-2xl font-bold text-white">{artist.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

@@ -30,7 +30,7 @@ const hosts = [
   {
     name: 'Radith Rukshan',
     role: 'Noiyse project',
-    image: '/Assets/images/Noiyse project (Radith Rukshan).jpeg', // Replace with actual image path
+    image: '/Assets/images/240155468_2309403905902526_5013628274033763031_n.jpg', // Replace with actual image path
   },
 ];
 
@@ -280,12 +280,12 @@ export default function HomePage() {
 </div>
 
 
-
+<Gallery />
 
 
         <Features />
 
-        <Gallery />
+
         <Reservation />
         <News />
       </main>
