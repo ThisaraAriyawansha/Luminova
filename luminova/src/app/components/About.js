@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="flex flex-col items-center px-8 py-16 mb-24 text-white group md:px-16 lg:px-32 md:flex-row"
+      className="flex flex-col items-center px-8 py-16 mb-0 text-white group md:px-16 lg:px-32 md:flex-row"
       style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
     >
       {/* Left Side */}
