@@ -180,37 +180,46 @@ export default function HomePage() {
       </motion.div>
     </header>
     
-      {/* Main Content */}
-      <main className="flex flex-col items-center flex-1 p-4 mt-10 text-center">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={slideIn}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col w-full max-w-6xl p-1 mb-12 md:flex-row md:space-x-8"
-        >
-          <div className="flex-1 p-6 mr-40 text-left text-white -ml-28 md:w-1/2">
-            <h6 className="mb-2 text-base font-semibold tracking-wider text-white uppercase">Welcome to the Party</h6>
-            <h2 className="mb-8 font-extrabold text-white text-7xl">Make Your Events Shine with Luminova</h2>
-            <p className="mb-10 text-lg text-gray-200" style={{ fontFamily: 'Tinos, serif' }}>
-              Seamlessly organize and manage events, from intimate gatherings to large professional conferences. Customize your planning experience with real-time collaboration and an intuitive interface.
-            </p>
-            <a href="#get-started" className="px-8 py-3 font-semibold text-white transition duration-200 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-500 hover:to-purple-300">
-              Get in Touch
-            </a>
-          </div>
+    <main className="flex flex-col items-center flex-1 p-4 mt-10 text-center">
+  <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={slideIn}
+    transition={{ duration: 0.8 }}
+    className="flex flex-col w-full p-4 mb-12 max-w-7xl md:flex-row md:space-x-8"
+  >
+    {/* Left Column - Text Content */}
+    <div className="flex-1 p-6 text-left text-white md:w-1/2 md:mr-8 md:ml-[-40px]">
+      <h6 className="mb-2 text-base font-semibold tracking-wider text-white uppercase">Welcome to the Party</h6>
+      <h2 className="mb-6 text-4xl font-extrabold text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        Make Your Events Shine with Luminova
+      </h2>
+      <p className="mb-8 text-lg text-gray-200 sm:text-xl md:text-lg" style={{ fontFamily: 'Tinos, serif' }}>
+        Seamlessly organize and manage events, from intimate gatherings to large professional conferences. Customize your planning experience with real-time collaboration and an intuitive interface.
+      </p>
+      <a
+        href="#get-started"
+        className="px-6 py-3 font-semibold text-white transition duration-200 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-500 hover:to-purple-300"
+      >
+        Get in Touch
+      </a>
+    </div>
 
-          <div className="flex-1 mt-6 md:w-1/2 md:mt-0">
-            <Image 
-              src="/Assets/images/1730777171598.png_image.png"
-              alt="Event Planning"
-              layout="responsive"
-              width={450}
-              height={280}
-              className="shadow-lg rounded-xl"
-            />
-          </div>
-        </motion.div>
+    {/* Right Column - Image */}
+    <div className="flex-1 mt-6 md:w-1/2 md:mt-0">
+      <Image
+        src="/Assets/images/1730777171598.png_image.png"
+        alt="Event Planning"
+        layout="responsive"
+        width={450}
+        height={280}
+        className="shadow-lg rounded-xl"
+      />
+    </div>
+  </motion.div>
+</main>
+
+
 
 
         <div className="max-w-5xl p-6 mx-auto mt-10 mb-10 rounded-lg lg:bg-white/0">
@@ -331,7 +340,6 @@ export default function HomePage() {
         <Terminate/>
         <Features />
         <News />
-      </main>
 
 
       <motion.footer
