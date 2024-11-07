@@ -147,6 +147,29 @@ app.post("/api/reservation", async (req, res) => {
   }
 });
 
+
+app.post('/api/subscribe', async (req, res) => {
+    const { email } = req.body;
+  
+    if (!email) {
+      return res.status(400).json({ message: 'Email is required' });
+    }
+  
+    try {
+      // Save email to Firebase
+      await db.collection('subscribers').add({
+        email,
+        subscribedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+  
+      res.status(200).json({ message: 'Subscription successful!' });
+    } catch (error) {
+      console.error('Error saving email:', error);
+      res.status(500).json({ message: 'Failed to subscribe, please try again later.' });
+    }
+  });
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

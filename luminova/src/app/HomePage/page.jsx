@@ -9,6 +9,7 @@ import Gallery from '../components/Gallery';
 import Reservation from '../components/Reservation';
 import News from '../components/News';
 import About from '../components/About';
+import Terminate from '../components/Testimonials';
 
 
 const hosts = [
@@ -280,14 +281,10 @@ export default function HomePage() {
 </div>
 
 
-<Gallery />
-
-
-
-
+        <Gallery />
         <Reservation />
+        <Terminate/>
         <Features />
-
         <News />
       </main>
 
