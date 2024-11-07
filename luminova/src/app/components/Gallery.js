@@ -1,5 +1,6 @@
 // pages/index.js
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const artists = [
   { name: 'Martin Garrix', imgSrc: '/Assets/images/DQgzXjZXcAUbw7Y.jpeg' },
@@ -15,7 +16,14 @@ export default function Home() {
     <div className="flex items-center justify-center min-h-screen mb-10 bg-transparent" id="gallery">
       <div className="grid grid-cols-1 gap-10 p-10 md:grid-cols-3">
         {artists.map((artist, index) => (
-          <div key={index} className="text-center">
+          <motion.div
+            key={index}
+            className="text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: index * 0.3 }} // Slower animation with increased delay
+            viewport={{ once: true }}
+          >
             <div className="relative mb-6 overflow-hidden shadow-lg w-80 h-80 rounded-xl">
               <Image
                 src={artist.imgSrc}
@@ -26,7 +34,7 @@ export default function Home() {
               />
             </div>
             <p className="text-2xl font-bold text-white">{artist.name}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
