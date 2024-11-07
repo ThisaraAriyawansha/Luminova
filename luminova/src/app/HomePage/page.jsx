@@ -1,4 +1,6 @@
 "use client";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for menu toggle
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -85,14 +87,22 @@ const fadeIn = {
 
 export default function HomePage() {
   // Define animation variants
-  const fadeIn = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
   const slideIn = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      setMenuOpen(false); // Close menu after navigation on mobile
     }
+  };
+
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
   return (
@@ -110,36 +120,66 @@ export default function HomePage() {
         <link rel="icon" href="/Assets/images/letter-l-logo-icon-design.png" />
       </Head>
 
-      {/* Header */}
       <header className="w-full shadow bg-white/0">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          transition={{ duration: 0.8 }}
-          className="container flex items-center justify-between px-4 py-6 mx-auto"
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        transition={{ duration: 0.8 }}
+        className="container flex items-center justify-between px-4 py-6 mx-auto"
+      >
+        {/* Logo */}
+        <div className="flex items-center">
+          <Image src="/Assets/images/logo.png" alt="Luminova Logo" width={50} height={50} className="mr-2" />
+          <h1 className="text-2xl font-extrabold tracking-wide text-transparent md:text-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text">
+            Luminova
+          </h1>
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden space-x-8 md:flex">
+          {["about", "event", "gallery", "reservation", "news"].map((item) => (
+            <a
+              key={item}
+              onClick={() => scrollToSection(item)}
+              className="relative text-white font-semibold text-lg font-serif hover:text-white after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          ))}
+        </nav>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="text-2xl text-white md:hidden focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          <div className="flex items-center">
-            <Image src="/Assets/images/logo.png" alt="Luminova Logo" width={50} height={50} className="mr-2" />
-            <h1 className="text-3xl font-extrabold tracking-wide text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text">
-              Luminova
-            </h1>
-          </div>
-          <nav className="flex mr-8 space-x-8">
-            {['about', 'event', 'gallery', 'reservation', 'news'].map((item) => (
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-full h-screen space-y-8 text-white bg-black/90 md:hidden"
+          >
+            {["about", "event", "gallery", "reservation", "news"].map((item) => (
               <a
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="relative text-white font-semibold text-lg font-serif hover:text-white after:content-[''] after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+                className="font-serif text-xl font-semibold"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </a>
             ))}
-          </nav>
-        </motion.div>
-      </header>
-
+          </motion.nav>
+        )}
+      </motion.div>
+    </header>
+    
       {/* Main Content */}
       <main className="flex flex-col items-center flex-1 p-4 mt-10 text-center">
         <motion.div
