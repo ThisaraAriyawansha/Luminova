@@ -10,6 +10,7 @@ import Reservation from '../components/Reservation';
 import News from '../components/News';
 import About from '../components/About';
 import Terminate from '../components/Testimonials';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';  // Importing icons from react-icons library
 
 
 const hosts = [
@@ -76,6 +77,10 @@ const services = [
 ];
 
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
 
 
 export default function HomePage() {
@@ -288,18 +293,58 @@ export default function HomePage() {
         <News />
       </main>
 
-      {/* Footer */}
+
       <motion.footer
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-        transition={{ duration: 0.8 }}
-        className="w-full py-6 text-white bg-gray-800 bg-opacity-90"
-      >
-        <div className="container px-4 mx-auto text-center">
-          <p className="text-sm">&copy; {new Date().getFullYear()} Luminova. All rights reserved.</p>
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+      whileInView="visible"  // Animation triggers when in view
+      transition={{ duration: 1 }}
+      className="w-full py-8 text-white"
+    >
+      <div className="container px-4 mx-auto text-center">
+        {/* Social Icons */}
+        <div className="flex justify-center mb-6 space-x-6">
+          <a
+            href="https://facebook.com"
+            className="transition-colors hover:text-purple-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook size={24} />
+          </a>
+          <a
+            href="https://twitter.com"
+            className="transition-colors hover:text-purple-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTwitter size={24} />
+          </a>
+          <a
+            href="https://instagram.com"
+            className="transition-colors hover:text-purple-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram size={24} />
+          </a>
+          <a
+            href="https://linkedin.com"
+            className="transition-colors hover:text-purple-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={24} />
+          </a>
         </div>
-      </motion.footer>
+
+        {/* Copyright Text */}
+        <p className="text-sm">&copy; {new Date().getFullYear()} Luminova. All rights reserved.</p>
+      </div>
+    </motion.footer>
+
+
     </div>
   );
 }
