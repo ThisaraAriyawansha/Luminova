@@ -15,7 +15,7 @@ export default function Features() {
   };
 
   return (
-    <div className="min-h-screen p-8 text-white bg-transparent ml-28 mr-28">
+    <div className="min-h-screen px-6 py-8 text-white bg-transparent sm:px-12 lg:px-28">
       {/* Blog Section */}
       <section className="mb-16">
         <h3 className="mb-2 font-semibold text-left text-purple-400 uppercase">Blog</h3>
@@ -23,7 +23,9 @@ export default function Features() {
         <div className="mt-4 text-right">
           <a href="#" className="text-purple-400 hover:text-white">All News</a>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+
+        {/* Grid of Blog Cards */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Blog Card 1 */}
           <motion.div
             className="p-4 bg-transparent rounded-lg"

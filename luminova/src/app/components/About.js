@@ -64,12 +64,14 @@ export default function About() {
     >
       {/* Left Side */}
       <div className="p-4 mb-8 text-left transition duration-300 transform rounded-lg md:mr-10 lg:mr-20 md:ml-0 md:w-1/2 md:mb-0 animate__animated animate__fadeInLeft">
-        <h2 className="mb-4 text-2xl font-bold transition duration-300 md:text-3xl lg:text-4xl group-hover:text-purple-400">About Last Night</h2>
+        <h2 className="mb-4 text-2xl font-bold transition duration-300 md:text-3xl lg:text-4xl group-hover:text-purple-400">
+          About Last Night
+        </h2>
         <p className="mb-8 text-sm text-white md:text-base lg:text-lg">
           Our Last Night was an unforgettable experience, bringing together amazing music, vibrant energy, and a crowd of passionate fans. From the beats that kept everyone dancing to the memorable moments shared, it was truly a night to remember.
         </p>
 
-        <div className="flex space-x-6 text-center md:space-x-8">
+        <div className="flex flex-col justify-center space-y-6 text-center sm:flex-row sm:space-y-0 sm:space-x-8">
           <div>
             <span className="text-3xl font-bold text-purple-500 transition duration-300 md:text-4xl group-hover:text-purple-400">
               {artistsCount}+
@@ -95,9 +97,9 @@ export default function About() {
       <div className="relative md:w-1/2 md:mr-0 animate__animated animate__fadeInRight">
         <div className="relative transition duration-300 transform group-hover:scale-105">
           <Image
-            src="/Assets/images/pexels-wendywei-1190298.jpg" 
+            src="/Assets/images/pexels-wendywei-1190298.jpg"
             alt="Party Image"
-            width={500}
+            width={550}
             height={350}
             className="rounded-lg"
           />

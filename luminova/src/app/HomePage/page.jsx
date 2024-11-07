@@ -268,10 +268,9 @@ export default function HomePage() {
 
 
 
-
         <div className="px-8 py-16 mb-0 text-white bg-transparent md:px-16 lg:px-32">
-  <h2 className="mb-20 text-4xl font-bold text-left">Our Party Host</h2>
-  <div className="grid grid-cols-1 gap-24 md:grid-cols-2 lg:grid-cols-4">
+  <h2 className="mb-10 text-3xl font-bold text-left sm:mb-16 sm:text-4xl">Our Party Host</h2>
+  <div className="grid grid-cols-1 gap-12 sm:gap-16 md:grid-cols-2 lg:grid-cols-4">
     {hosts.map((host, index) => (
       <motion.div
         key={index}
@@ -282,7 +281,7 @@ export default function HomePage() {
         viewport={{ once: true }}
         whileHover={{ scale: 1.05 }} // Hover effect
       >
-        <div className="relative mb-4 transition-transform duration-300 w-60 h-80 hover:shadow-xl hover:scale-105">
+        <div className="relative w-full mb-4 transition-transform duration-300 h-80 sm:h-96 md:w-60 md:h-80 lg:w-72 lg:h-96 hover:shadow-xl hover:scale-105">
           <Image
             src={host.image}
             alt={host.name}
@@ -291,12 +290,13 @@ export default function HomePage() {
             className="rounded-lg shadow-lg"
           />
         </div>
-        <h3 className="text-2xl font-semibold">{host.name}</h3>
+        <h3 className="text-xl font-semibold sm:text-2xl">{host.name}</h3>
         <p className="text-lg text-purple-500">{host.role}</p>
       </motion.div>
     ))}
   </div>
 </div>
+
 
 <Events />
 
@@ -305,8 +305,8 @@ export default function HomePage() {
 
 <div className="px-4 py-16 text-white bg-transparent">
   <div className="max-w-6xl mx-auto text-left mb-28">
-    <h2 className="mb-12 text-5xl font-bold">What We Do</h2>
-    <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+    <h2 className="mb-12 text-5xl font-bold text-center md:text-left">What We Do</h2>
+    <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
       {services.map((service) => (
         <motion.div
           key={service.id}
@@ -335,6 +335,7 @@ export default function HomePage() {
 </div>
 
 
+
         <Gallery />
         <Reservation />
         <Terminate/>
@@ -342,55 +343,58 @@ export default function HomePage() {
         <News />
 
 
-      <motion.footer
-      initial="hidden"
-      animate="visible"
-      variants={fadeIn}
-      whileInView="visible"  // Animation triggers when in view
-      transition={{ duration: 1 }}
-      className="w-full py-8 text-white"
-    >
-      <div className="container px-4 mx-auto text-center">
-        {/* Social Icons */}
-        <div className="flex justify-center mb-6 space-x-6">
-          <a
-            href="https://facebook.com"
-            className="transition-colors hover:text-purple-600"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook size={24} />
-          </a>
-          <a
-            href="https://twitter.com"
-            className="transition-colors hover:text-purple-600"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTwitter size={24} />
-          </a>
-          <a
-            href="https://instagram.com"
-            className="transition-colors hover:text-purple-600"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram size={24} />
-          </a>
-          <a
-            href="https://linkedin.com"
-            className="transition-colors hover:text-purple-600"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin size={24} />
-          </a>
-        </div>
+        <motion.footer
+  initial="hidden"
+  animate="visible"
+  variants={fadeIn}
+  whileInView="visible"  // Animation triggers when in view
+  transition={{ duration: 1 }}
+  className="w-full py-8 text-white bg-transparent"
+>
+  <div className="container px-4 mx-auto text-center">
+    {/* Social Icons */}
+    <div className="flex flex-wrap justify-center mb-6 space-x-6">
+      <a
+        href="https://facebook.com"
+        className="transition-colors hover:text-purple-600"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaFacebook size={24} />
+      </a>
+      <a
+        href="https://twitter.com"
+        className="transition-colors hover:text-purple-600"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaTwitter size={24} />
+      </a>
+      <a
+        href="https://instagram.com"
+        className="transition-colors hover:text-purple-600"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaInstagram size={24} />
+      </a>
+      <a
+        href="https://linkedin.com"
+        className="transition-colors hover:text-purple-600"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaLinkedin size={24} />
+      </a>
+    </div>
 
-        {/* Copyright Text */}
-        <p className="text-sm">&copy; {new Date().getFullYear()} Luminova. All rights reserved.</p>
-      </div>
-    </motion.footer>
+    {/* Copyright Text */}
+    <p className="text-sm">
+      &copy; {new Date().getFullYear()} Luminova. All rights reserved.
+    </p>
+  </div>
+</motion.footer>
+
 
 
     </div>

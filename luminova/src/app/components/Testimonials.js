@@ -46,7 +46,7 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Grid of testimonial buttons */}
-        <div className="grid justify-center grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid justify-center grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {/* Button for Leo */}
           <motion.button
             onClick={() => setSelectedPerson('leo')}

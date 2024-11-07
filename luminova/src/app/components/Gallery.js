@@ -14,6 +14,11 @@ const artists = [
 export default function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen mb-10 bg-transparent" id="gallery">
+      {/* 
+        Grid Layout:
+        - On mobile: 1 column (`grid-cols-1`)
+        - On tablet and up: 3 columns (`md:grid-cols-3`)
+      */}
       <div className="grid grid-cols-1 gap-10 p-10 md:grid-cols-3">
         {artists.map((artist, index) => (
           <motion.div
@@ -24,7 +29,8 @@ export default function Home() {
             transition={{ duration: 1.5, delay: index * 0.3 }} // Slower animation with increased delay
             viewport={{ once: true }}
           >
-            <div className="relative mb-6 overflow-hidden shadow-lg w-80 h-80 rounded-xl">
+            <div className="relative mb-6 overflow-hidden shadow-lg w-full md:w-[350px] h-[350px] rounded-xl"> 
+              {/* Increased width on larger screens */}
               <Image
                 src={artist.imgSrc}
                 alt={artist.name}
