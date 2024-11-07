@@ -70,7 +70,7 @@ export default function Event() {
       </p>
 
       {/* Day Selector */}
-      <div className="flex mb-8 space-x-6">
+      <div className="flex flex-wrap justify-center mb-8 space-x-6">
         {Object.keys(events).map((day) => (
           <button
             key={day}
@@ -86,13 +86,13 @@ export default function Event() {
       {/* Event Card with Background */}
       {events[selectedDay].title && (
         <motion.div
-          className="p-16 text-left bg-blue-800 shadow-2xl rounded-xl"
+          className="p-8 md:p-16 text-left bg-blue-800 shadow-2xl rounded-xl w-full md:w-[1200px] lg:w-[1400px] xl:w-[1600px]"
           style={{
             backgroundImage: events[selectedDay].backgroundImage,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             height: '500px',
-            width: '1200px',
+            maxWidth: '75%',
           }}
           animate={eventCardAnimation}
           initial={{ opacity: 0, y: 50, scale: 0.95 }}  // Start smaller and fade in
@@ -104,11 +104,11 @@ export default function Event() {
           key={selectedDay} // Key helps to trigger re-animation on day change
           whileHover={{ scale: 1.05 }} // Hover effect: scale up
         >
-          <h3 className="text-4xl font-semibold">{events[selectedDay].title}</h3>
-          <p className="mt-6 text-lg">{events[selectedDay].date} / {events[selectedDay].time}</p>
+          <h3 className="text-2xl font-semibold md:text-4xl">{events[selectedDay].title}</h3>
+          <p className="mt-6 text-lg md:text-xl">{events[selectedDay].date} / {events[selectedDay].time}</p>
 
           {/* Description with line breaks using <br /> tags */}
-          <p className="mt-6 text-md">
+          <p className="mt-6 text-md md:text-lg">
             {events[selectedDay].description.split('\n').map((line, index) => (
               <span key={index}>
                 {line}

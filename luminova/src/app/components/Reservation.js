@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import axios from 'axios';  // Import Axios for HTTP requests
+import axios from 'axios';
 
 export default function Reservation() {
   const fadeIn = {
@@ -216,4 +216,4 @@ export default function Reservation() {
       </div>
     </div>
   );
-}
+}  
