@@ -283,10 +283,11 @@ export default function HomePage() {
 <Gallery />
 
 
-        <Features />
 
 
         <Reservation />
+        <Features />
+
         <News />
       </main>
 
